@@ -1,4 +1,5 @@
 import type {LoginFormValues} from './login-schema';
+import {MOCK_USER} from '@/data/mock-auth-data';
 
 type MockAuthSuccess = {
   ok: true;
@@ -15,12 +16,6 @@ type MockAuthError = {
 };
 
 type MockAuthResult = MockAuthSuccess | MockAuthError;
-
-const MOCK_USER = {
-  username: 'admin',
-  password: 'admin123',
-  name: 'School Admin',
-};
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
