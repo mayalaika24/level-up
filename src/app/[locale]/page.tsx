@@ -1,7 +1,7 @@
-import { getTranslations } from 'next-intl/server';
 import {hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import {LoginForm} from '@/features/auth/components/login-form';
 
 type Props = Readonly<{
   params: Promise<{locale: string}>;
@@ -14,10 +14,8 @@ async function Page({params}: Props) {
     notFound();
   }
 
-  const t = await getTranslations({locale});
-
   return (
-    <div>{t("hello")}</div>
+    <LoginForm />
   );
 }
 
